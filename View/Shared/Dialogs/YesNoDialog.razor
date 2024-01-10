@@ -1,0 +1,20 @@
+<MudDialog>
+    <DialogContent>
+        <MudText Typo="Typo.h6">@Message</MudText>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Variant="Variant.Filled" Color="Color.Success" OnClick="() => Dialog.Close(DialogResult.Ok(true))">Ja</MudButton>
+        <MudSpacer></MudSpacer>
+        <MudButton Variant="Variant.Filled" Color="Color.Error" OnClick="() => Dialog.Close(DialogResult.Cancel())">Nein</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+
+    [CascadingParameter]
+    public MudDialogInstance Dialog { get; set; } = null!;
+
+    [Parameter]
+    public string Message { get; set; } = null!;
+
+}

@@ -1,0 +1,42 @@
+@typeparam T
+
+@if (Override) {
+    @OverrideContent
+}
+else if (Data is not null) {
+    @ChildContent(Data)
+}
+else {
+    <MudOverlay Visible="true" AutoClose="false" DarkBackground="true">
+        <MudProgressCircular Indeterminate="true" Size="Size.Medium"></MudProgressCircular>
+    </MudOverlay>
+}
+
+@code {
+
+    /// <summary>
+    ///     The data to be passed to the child content.
+    ///     If null, the child content will not be rendered.
+    /// </summary>
+    [Parameter]
+    public T? Data { get; set; }
+
+    /// <summary>
+    ///     If true, the override content will be rendered and the child content/Data will be ignored.
+    /// </summary>
+    [Parameter]
+    public bool Override { get; set; }
+
+    /// <summary>
+    ///     The child content to be rendered.
+    /// </summary>
+    [Parameter]
+    public RenderFragment<T> ChildContent { get; set; } = null!;
+
+    /// <summary>
+    ///     The content to be rendered if Override is true.
+    /// </summary>
+    [Parameter]
+    public RenderFragment? OverrideContent { get; set; }
+
+}

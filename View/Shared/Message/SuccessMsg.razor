@@ -1,0 +1,34 @@
+@if (Msg is not null) {
+    <MudAlert Severity="Severity.Success" ShowCloseIcon="Clearable" CloseIconClicked="ClearMsg">
+        @Msg
+    </MudAlert>
+}
+
+@code {
+
+
+    /// <summary>
+    ///     The Message to display in the alert. (default null)
+    ///     2 way bindable.
+    /// </summary>
+    [Parameter]
+    public string? Msg { get; set; }
+
+    /// <summary>
+    ///     If true, the alert will display a button that closes it. (default true)
+    /// </summary>
+    [Parameter]
+    public bool Clearable { get; set; }
+
+    /// <summary>
+    ///     DO NOT USE
+    /// </summary>
+    [Parameter]
+    public EventCallback<string?> MsgChanged { get; set; }
+
+    private async Task ClearMsg() {
+        Msg = null;
+        await MsgChanged.InvokeAsync(null);
+    }
+
+}

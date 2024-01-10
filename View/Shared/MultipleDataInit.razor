@@ -1,0 +1,27 @@
+@if (Override) {
+    @OverrideContent
+}
+else if (Data.All(d => d != null)) {
+    @ChildContent
+}
+else {
+    <MudOverlay Visible="true" AutoClose="false" DarkBackground="true">
+        <MudProgressCircular Indeterminate="true" Size="Size.Medium"></MudProgressCircular>
+    </MudOverlay>
+}
+
+@code {
+
+    [Parameter]
+    public object?[] Data { get; set; } = null!;
+
+    [Parameter]
+    public bool Override { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = null!;
+
+    [Parameter]
+    public RenderFragment? OverrideContent { get; set; }
+
+}

@@ -1,3 +1,32 @@
 ﻿@inherits LayoutComponentBase
 
-<main> @Body </main>
+<MudThemeProvider @bind-IsDarkMode="_isDarkMode"/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+
+<MudLayout>
+    <MudMainContent>
+        <MudAppBar Dense="true" Color="Color.Primary">
+            <AppBarItem StartIcon="@Icons.Material.Sharp.Home" Text="HOMEPAGE" Href="/"/>
+            <MudSpacer/>
+            <MudIconButton Icon="@_currentIcon" OnClick="ChangeTheme"/>
+        </MudAppBar>
+        <MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
+            @Body
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code {
+
+    private bool _isDarkMode;
+    private string _currentIcon = Icons.Material.Sharp.DarkMode;
+    private void ChangeTheme()
+    {
+        _isDarkMode = !_isDarkMode;
+        _currentIcon = _isDarkMode ? Icons.Material.Sharp.LightMode : Icons.Material.Sharp.DarkMode;
+        StateHasChanged();
+    }
+
+}
