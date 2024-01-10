@@ -16,7 +16,17 @@ This template provides a quick and easy way to set up a MudBlazor project with E
     dotnet new --install https://github.com/DomiFchs/MudBlazorEFTemplate7.git
     ```
 
-3. **Check Installed Templates:**
+    If you want to update the Template, you have to pull the repository by executing following command in the cloned git repository environment
+   ```bash
+    git pull
+    ```
+
+   And then instead of the dotnet command above, use:
+    ```bash
+    dotnet new --install https://github.com/DomiFchs/MudBlazorEFTemplate7.git --force
+    ```
+
+4. **Check Installed Templates:**
 
     Ensure that the template is installed by running:
 
@@ -24,7 +34,7 @@ This template provides a quick and easy way to set up a MudBlazor project with E
     dotnet new list
     ```
 
-4. **Open in Rider:**
+5. **Open in Rider:**
 
     - Open Rider.
     - Create a new solution.
@@ -40,17 +50,17 @@ This template provides a quick and easy way to set up a MudBlazor project with E
         - global.json
         - MudBlazorEFTemplate7.sln
 
-5. **Apply Changes:**
+6. **Apply Changes:**
 
     - Apply the folder changes.
     - Click the reload button.
 
-6. **Explore the Template:**
+7. **Explore the Template:**
 
     - Open the new solution in Rider.
     - Explore the project structure and files.
     
-7. **Enjoy!**
+8. **Enjoy!**
 
     - Scroll down to the "Other" section in Rider.
     - You should find a new template related to MudBlazor EFCore.
