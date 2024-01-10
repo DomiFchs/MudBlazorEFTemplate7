@@ -21,7 +21,5 @@ public interface ICommonRepository<TEntity> where TEntity : class
         Task DeleteAsync(Expression<Func<TEntity, bool>> filter, CancellationToken ct);
         Task<int> CountAsync(Expression<Func<TEntity, bool>> filter, CancellationToken ct);
         Task<int> CountAsync(CancellationToken ct);
-        Task<int> CountAsync(CancellationToken ct, params Expression<Func<TEntity, object>>[] includes);
-        Task<int> CountAsync(Expression<Func<TEntity, bool>> filter, CancellationToken ct, params Expression<Func<TEntity, object>>[] includes);
         Task<int> CountAsync<TProperty>(Expression<Func<TEntity, TProperty>> propertySelector, string? search, CancellationToken ct);
     }

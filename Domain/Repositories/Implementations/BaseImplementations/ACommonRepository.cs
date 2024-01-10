@@ -179,27 +179,6 @@ public class ACommonRepository<TEntity> : ICommonRepository<TEntity> where TEnti
         var table = context.Set<TEntity>();
         return await table.AsNoTracking().IgnoreAutoIncludes().CountAsync(ct);
     }
-    
-    public virtual async Task<int> CountAsync(Expression<Func<TEntity, bool>> filter, CancellationToken ct, params Expression<Func<TEntity, object>>[] includes) {
-        await using var context = await ContextFactory.CreateDbContextAsync(ct);
-        var table = context.Set<TEntity>();
-        var query = table.AsNoTracking().IgnoreAutoIncludes().Where(filter);
-        foreach (var include in includes) {
-            query = query.Include(include);
-        }
-        return await query.CountAsync(ct);
-    }
-    
-    public virtual async Task<int> CountAsync(CancellationToken ct, params Expression<Func<TEntity, object>>[] includes) {
-        await using var context = await ContextFactory.CreateDbContextAsync(ct);
-        var table = context.Set<TEntity>();
-        var query = table.AsNoTracking().IgnoreAutoIncludes();
-        foreach (var include in includes) {
-            query = query.Include(include);
-        }
-        return await query.CountAsync(ct);
-    }
-    
     public virtual async Task<int> CountAsync<TProperty>(Expression<Func<TEntity, TProperty>> propertySelector, string? search,
         CancellationToken ct) {
         
