@@ -23,7 +23,7 @@ This template provides a quick and easy way to set up a MudBlazor project with E
 
    And then instead of the dotnet command above, use:
     ```bash
-    dotnet new . --force
+    dotnet new --install . --force
     ```
 
 4. **Check Installed Templates:**
