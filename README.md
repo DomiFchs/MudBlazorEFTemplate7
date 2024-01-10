@@ -13,7 +13,7 @@ This template provides a quick and easy way to set up a MudBlazor project with E
 2. **Install the Template:**
 
     ```bash
-    dotnet new --install https://github.com/DomiFchs/MudBlazorEFTemplate7.git
+    dotnet new --install .
     ```
 
     If you want to update the Template, you have to pull the repository by executing following command in the cloned git repository environment
@@ -23,7 +23,7 @@ This template provides a quick and easy way to set up a MudBlazor project with E
 
    And then instead of the dotnet command above, use:
     ```bash
-    dotnet new --install https://github.com/DomiFchs/MudBlazorEFTemplate7.git --force
+    dotnet new . --force
     ```
 
 4. **Check Installed Templates:**
