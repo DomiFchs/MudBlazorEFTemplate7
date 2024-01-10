@@ -9,8 +9,6 @@ namespace Domain.Repositories.Implementations.BaseImplementations;
 
 public class ACompositeKeyRepository<TEntity, TKey1, TKey2> : ACommonRepository<TEntity>,ICompositeKeyRepository<TEntity, TKey1, TKey2> where TEntity : class {
     
-    
-    
     public async Task<TEntity?> ReadAsync(TKey1? key1, TKey2? key2, CancellationToken ct)
     {
         await using var context = await ContextFactory.CreateDbContextAsync(ct);

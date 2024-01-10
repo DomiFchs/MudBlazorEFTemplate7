@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Dominik Fuchs",
+    "classifications": ["Web", "WebApplication", "Blazor", "MudBlazor", "EFCore"],
+    "name": "MudBlazorEFTemplate7",
+    "identity": "MudBlazorEFTemplate7",
+    "shortName": "mudblazoreftemplate",
+    "tags": {
+        "type": "solution",
+        "language": "C#",
+        "framework": ".NET",
+        "blazor": "3.0",
+        "efcore": "7.0"
+    },
+    "sourceName": "MudBlazorEFTemplate7",
+    "preferNameDirectory": true,
+    "description": "A three-layered Blazor application with MudBlazor for the UI and Entity Framework Core for data access.",
+    "symbols": {
+      "SolutionName": {
+        "type": "parameter",
+        "datatype": "string",
+        "replaces": "MudBlazorEFTemplate7"
+      }
+    }
+  }
